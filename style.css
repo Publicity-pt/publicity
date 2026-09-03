@@ -395,3 +395,104 @@ footer {
     gap: 30px; 
   }
 }
+/* Secção Geral de Portfólio */
+.portfolio-section {
+  padding: 80px 8%;
+  background-color: var(--bg-dark);
+}
+
+.portfolio-header {
+  margin-bottom: 35px;
+}
+
+.portfolio-badge {
+  display: inline-block;
+  color: var(--teal-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.portfolio-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Estrutura Mural Dinâmico (Masonry com CSS Columns) */
+.portfolio-masonry {
+  column-count: 4; /* 4 colunas em ecrãs de computador */
+  column-gap: 16px;
+}
+
+.masonry-item {
+  position: relative;
+  margin-bottom: 16px;
+  break-inside: avoid; /* Impede a foto de ser cortada ao meio entre colunas */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #12151b;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto; /* Mantém a proporção real de cada foto (alta ou larga) */
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+/* Efeito ao passar o rato */
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(15, 17, 21, 0.85) 0%, rgba(0, 139, 155, 0.25) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item-overlay span {
+  color: var(--text-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 3px solid var(--teal-primary);
+  padding-left: 8px;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.04);
+}
+
+.masonry-item:hover .item-overlay {
+  opacity: 1;
+}
+
+/* Responsivo para Tablets e Portáteis menores */
+@media (max-width: 1024px) {
+  .portfolio-masonry {
+    column-count: 3;
+  }
+}
+
+/* Responsivo para Telemóveis */
+@media (max-width: 650px) {
+  .portfolio-section {
+    padding: 50px 5%;
+  }
+  .portfolio-masonry {
+    column-count: 2; /* 2 colunas no telemóvel para ficar fácil de rolar */
+    column-gap: 12px;
+  }
+  .masonry-item {
+    margin-bottom: 12px;
+  }
+}
