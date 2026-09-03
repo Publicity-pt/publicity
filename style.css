@@ -291,3 +291,32 @@ footer {
     padding: 40px 6%; 
   }
 }
+/* Contentor centrado do botão */
+.services-action {
+  text-align: center;
+  margin-top: 45px;
+}
+
+/* Estilo do botão Ver Serviços */
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--text-white);
+  border: 2px solid var(--teal-primary);
+  text-decoration: none;
+  padding: 13px 36px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+/* Efeito ao passar o rato (Hover) */
+.btn-secondary:hover {
+  background-color: var(--teal-primary);
+  color: var(--text-white);
+  box-shadow: 0 0 20px rgba(0, 139, 155, 0.45);
+  transform: translateY(-3px);
+}
