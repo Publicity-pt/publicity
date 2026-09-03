@@ -543,3 +543,108 @@ footer {
     margin-bottom: 12px;
   }
 }
+/* Secção Nossos Clientes */
+.clients-section {
+  padding: 75px 8% 65px;
+  background-color: #0b0d11;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  overflow: hidden;
+}
+
+.clients-header {
+  margin-bottom: 45px;
+}
+
+.clients-badge {
+  display: inline-block;
+  color: var(--teal-glow);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* Título em Azul / Teal com ligeiro brilho néon */
+.clients-title {
+  color: var(--teal-primary);
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(0, 139, 155, 0.4);
+}
+
+.clients-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Carrossel Infinito / Marquee */
+.clients-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollClients 22s linear infinite;
+}
+
+/* Pausa suave quando se passa o rato */
+.clients-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Cartão de cada Cliente */
+.client-logo {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 16px 36px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo:hover {
+  color: #ffffff;
+  border-color: var(--teal-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 139, 155, 0.25);
+}
+
+/* Animação contínua */
+@keyframes scrollClients {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .clients-title {
+    font-size: 1.8rem;
+  }
+  .client-logo {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
