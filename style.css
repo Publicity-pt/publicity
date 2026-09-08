@@ -250,7 +250,7 @@ header {
 
 .card-img-wrapper {
   width: 100%;
-  height: 180px; /* Altura da foto */
+  aspect-ratio: 1 / 1; /* Força o formato quadrado perfeito */
   overflow: hidden;
   background: #000;
 }
